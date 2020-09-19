@@ -1,32 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './Header.css';
-import header from '../../images/header.png';
-import logo from '../../images/icons/logo.png';
+
+import logo from '../../image/Logo.png';
+import { UserContext } from '../../App';
 
 const Header = () => {
+
+    const {places, handleSelectPlace, detail, user, loggedInUser} = useContext(UserContext);
+    
+
+
+
     return (
-        <div style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${header})` }} className="header">
-            <nav className="nav">
-                <ul>
-                    <li>
-                        <img className="logo" src={logo} alt=""/>
-                    </li>
-                    <li>
-                        <Link to="/home">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/login">Login</Link>
-                    </li>
-                    <li>
-                        <Link className="btn-book" to="/book">Book</Link>
-                    </li>
-                </ul>
-            </nav>
-            <div className="title-container">
-                <h1>Burj Al Arab</h1>
-                <h2>A global icon of Arabian luxury</h2>
+        <div className='m-4 d-flex justify-content-center align-items-center px-5 '>
+            <img style={{width:'120px'}} className="logo" src={logo} alt=""/>
+            <div className="input-group ">
+                <div className="input-group-prepend">
+                  <FontAwesomeIcon style={{fontSize:'25px'}} className='text-white m-2' icon={faSearch} />
+                </div>
+                <input type="text" style={{backgroundColor:'#ffffff4d', width:'10px'}} className="form-control color-white" placeholder="Search your destination" aria-label="Username" aria-describedby="basic-addon1"/>
             </div>
+            <button className="btn mx-1 text-white">News</button>
+            <Link to='/home' className="btn mx-1 text-white">Destination</Link>
+            <button className="btn mx-1 text-white">Blog</button>
+            <button className="btn mx-1 text-white">Contact</button>
+            {
+                loggedInUser.isLoggedIn 
+                ? <h6>{loggedInUser.email}</h6>
+                : <Link to='/login' className="btn btn-warning mx-1 text-dark">Login</Link>
+            }
         </div>
     );
 };
