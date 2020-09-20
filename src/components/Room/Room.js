@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Room(props){
-
   const {image, name, avatar, details, placeId } = props.place;
   const classes = useStyles();
   const history = useHistory()

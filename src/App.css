@@ -1,10 +1,7 @@
 .body{
-  
-  /* background-image: url('./image/Image/rectangle1.png'); */
   background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
- 
   height: 100vh;
   margin:0px;
   overflow: hidden;

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { UserContext } from '../../App';
-// import { UserContext } from '../Home/Home';
+// import { UserContext } from '../../App';
+// // import { UserContext } from '../Home/Home';
 
 const Checkout = () => {
-    const {places, handleSelectPlace, detail, user, setUser} = useContext(UserContext);
-    console.log(detail);
+    // const {places, handleSelectPlace, detail, user, setUser} = useContext(UserContext);
+    // console.log(detail);
     return (
-        <div className='px-5'>
+        <div className='px-5 text-white'>
             <div className="col-md-6">
                 <h3 className='ml-3 mb-4'>Stay in </h3>
                 <div className="d-flex justify-content-center align-items-center my-2">

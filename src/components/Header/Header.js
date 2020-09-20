@@ -3,17 +3,11 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './Header.css';
-
 import logo from '../../image/Logo.png';
 import { UserContext } from '../../App';
 
 const Header = () => {
-
-    const {places, handleSelectPlace, detail, user, loggedInUser} = useContext(UserContext);
-    
-
-
-
+    const { loggedInUser} = useContext(UserContext);
     return (
         <div className='m-4 d-flex justify-content-center align-items-center px-5 '>
             <img style={{width:'120px'}} className="logo" src={logo} alt=""/>

@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-import { useContext } from 'react';
-
 import { useHistory, useLocation } from 'react-router-dom';
-import { UserContext } from '../../App';
 import { 
   initializeLoginFramework, 
   handleGoogleSignIn, 
-  handleSignInOut, 
   handleFbSignIn, 
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword 
@@ -24,20 +20,7 @@ function Login({setLoggedInUser}) {
     email: '',
     photo: '',
   });
-const hadleLogd = () => {
-  setLoggedInUser({
-    name: 'amjad',
-    email: 'a@a.b',
-  })
-}
- 
-  // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   
-
-  // console.log(setLoggedInUser)
-
- 
-
   const history = useHistory();
   const location = useLocation()
   let { from } = location.state || { from: { pathname: "/" } };
@@ -55,12 +38,7 @@ const hadleLogd = () => {
       handleResponse(res, true);
     })
   }
-  // const signInOut = () => {
-  //   handleSignInOut()
-  //   .then(res => {
-  //     handleResponse(res, false);
-  //   })
-  // }
+  
   const handleResponse = (res, redirect) => {
     setUser(res);
     setLoggedInUser(res);
